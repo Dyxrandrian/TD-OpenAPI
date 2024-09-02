@@ -1,8 +1,10 @@
 openapi: 3.0.3
 info:
-  title: Customer API
+  title: STD23065 - TD5
   description: API for managing customers
   version: 1.0.0
+servers:
+  - url: https://localhost.std23065.com
 paths:
   /customers/{customerId}:
     put:

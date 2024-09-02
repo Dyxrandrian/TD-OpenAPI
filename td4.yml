@@ -1,8 +1,10 @@
 openapi: 3.0.3
 info:
-  title: Order API
+  title: STD23065 - TD4
   description: API for managing customer orders
   version: 1.0.0
+servers:
+  - url: https://localhost.std23065.com
 paths:
   /customers/{customerId}/orders:
     get:

@@ -1,8 +1,10 @@
 openapi: 3.0.3
 info:
-  title: Meal API
+  title: STD23065 - TD3
   description: API for managing meals
   version: 1.0.0
+server : 
+    - url: https://localhost.std23065.com
 paths:
   /meals:
     get:
