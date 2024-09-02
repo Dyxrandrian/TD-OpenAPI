@@ -1,0 +1,69 @@
+openapi: 3.0.3
+info:
+  title: Customer API
+  description: API for managing customers
+  version: 1.0.0
+paths:
+  /customers/{customerId}:
+    put:
+      summary: Update a customer completely
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCustomer'
+      responses:
+        '200':
+          description: Customer updated successfully
+    patch:
+      summary: Partially update a customer
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialUpdateCustomer'
+      responses:
+        '200':
+          description: Customer partially updated successfully
+
+components:
+  schemas:
+    Customer:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        age:
+          type: integer
+    UpdateCustomer:
+      allOf:
+        - $ref: '#/components/schemas/Customer'
+      required:
+        - id
+        - name
+        - age
+    PartialUpdateCustomer:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        age:
+          type: integer
