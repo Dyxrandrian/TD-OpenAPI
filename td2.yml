@@ -69,14 +69,6 @@ paths:
                 items:
                   $ref: '#/components/schemas/Customer'
     delete:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: array
-              items:
-                $ref: '#/components/schemas/CustomerIdentifier'
-        required: true
       responses:
         200:
           description: List of deleted customers
